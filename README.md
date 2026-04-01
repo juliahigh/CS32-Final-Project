@@ -1,3 +1,4 @@
 # CS32-Final-Project
 
-writing here 
+This is Julia High and Raul Ontiveros' CS32 final project repository.
+
