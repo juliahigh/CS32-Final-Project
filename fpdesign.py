@@ -5,7 +5,7 @@ overlapping_ingredients = 0
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.\nPress Enter to begin.")
 #require an enter to begin
 user_ingredients = []
-user_input = input("Please list 10 ingredients you have in your kitchen, separated by commas.")
+user_input = i input("Please list 10 ingredients you have in your kitchen, separated by commas.")
 
 for ingredient in user_input.split(","):
     user_ingredients.append(ingredient.strip())
@@ -20,14 +20,13 @@ total_ingredients = len(computer_ingredients)
 #percentage of ingredients matched = some variable / total ingredients in recipe
 #print percentage of ingredients matched
 
-while True:
-    ingredients_line = computer_ingredients.readline()
-    for ingredient in computer_ingredients:
-        if user_ingredients == ingredient:
-            matching_ingredients += 1
-        else:
-            break
-    overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
-    print ("You have" + str(overlapping_ingredients) + "% of the ingredients required to make this dish.")
+ingredients_line = computer_ingredients.readline()
+for ingredient in computer_ingredients:
+    if ingredient in user_ingredients:
+        matching_ingredients += 1
+    else:
+        break
+overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
+print ("You have" + str(overlapping_ingredients) + "% of the ingredients required to make this dish.")
 
 #print matching ingredients / total ingredients
