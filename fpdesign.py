@@ -1,12 +1,16 @@
-
+#grab our ingredients csv file
 computer_ingredients = open('ingredients.csv')
+
+#operationalize all variables
 matching_ingredients = 0
 total_ingredients = 0
 overlapping_ingredients = 0
 
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.")
+#enter to begin
 input("Press enter to begin.")
 
+#create this empty list of the user's ingredients
 user_ingredients = []
 user_input = input("Please list up to 10 ingredients you have in your kitchen, separated by commas: ")
 
