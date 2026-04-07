@@ -49,7 +49,7 @@ if total_ingredients == 0:
 '''
 We've already noticed some things we will have to consider how to handle:
 - Quantities of ingredients
-- Variations of ingredients (i.e. if someone doesn’t have san marzano tomatoes but has heirloom, they can still make the dish)
+- Variations of ingredients (i.e. if someone doesn't have san marzano tomatoes but has heirloom, they can still make the dish)
 - Spelling variations (i.e. if they enter red pepper versus red pepper flakes)
 
 Additional significant steps will include:
