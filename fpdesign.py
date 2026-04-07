@@ -25,18 +25,23 @@ with open('ingredients.csv') as ingredient_file:
 #the total number of ingredients is the number of ingredients in the recipe
 total_ingredients = len(recipe_ingredients)
 
+#create an empty list for any missing ingredients
 missing_ingredients = []
 
 for ingredient in recipe_ingredients:
     if ingredient in user_ingredients:
+        #if the ingredient from the recipe is in the user's list, add 1 to the matching ingredients number
         matching_ingredients += 1
+        #otherwise, add to the missing ingredient's list
     else:
         missing_ingredients.append(ingredient)
 
-
+#the overlapping ingredients are the percentage
 overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
+#print what % of the ingredients required to make this dish
 print ("You have " + str(overlapping_ingredients) + "% of the ingredients required to make this dish.")
+#print which ingredients they're missing
 print("You are missing:", missing_ingredients)
+#if you don't have any of the necessary ingredients...
 if total_ingredients == 0:
     print("Recipe has no ingredients listed. Time to go grocery shopping!")
-    
