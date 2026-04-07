@@ -1,10 +1,4 @@
-#grab our ingredients csv file
-computer_ingredients = open('ingredients.csv')
-
-#operationalize all variables
 matching_ingredients = 0
-total_ingredients = 0
-overlapping_ingredients = 0
 
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.")
 #enter to begin
@@ -20,17 +14,16 @@ for ingredient in user_input.split(","):
     #confusing between upper and lowercase
     user_ingredients.append(ingredient.strip().lower())
 
-with open('ingredients.csv') as computer_ingredients:
+with open('ingredients.csv') as ingredient_file:
     #create another empty list, this time for the ingredients in the recipe
     recipe_ingredients = []
     #for each line of our ingredients file
-    for ingredient in computer_ingredients:
+    for ingredient in ingredient_file:
         #add to the actual recipes ingredients
         recipe_ingredients.append(ingredient.strip().lower())
 
 #the total number of ingredients is the number of ingredients in the recipe
 total_ingredients = len(recipe_ingredients)
-
 
 for ingredient in recipe_ingredients:
     if ingredient in user_ingredients:
