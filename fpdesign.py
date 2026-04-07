@@ -30,12 +30,13 @@ missing_ingredients = []
 for ingredient in recipe_ingredients:
     if ingredient in user_ingredients:
         matching_ingredients += 1
-    if ingredient not in user_ingredients:
+    else:
         missing_ingredients.append(ingredient)
 
-    else:
-        print("Recipe has no ingredients listed. Time to go grocery shopping!")
 
 overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
 print ("You have " + str(overlapping_ingredients) + "% of the ingredients required to make this dish.")
 print("You are missing:", missing_ingredients)
+if total_ingredients == 0:
+    print("Recipe has no ingredients listed. Time to go grocery shopping!")
+    
