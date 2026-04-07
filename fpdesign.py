@@ -1,13 +1,14 @@
-ingredients = open('txts/ingredients.csv')
+computer_ingredients = open('txts/ingredients.csv')
 matching_ingredients = 0
 total_ingredients = 0
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.\nPress Enter to begin.")
 #require an enter to begin
+user_ingredients = []
 user_input = input("Please list 10 ingredients you have in your kitchen, separated by commas.")
-user_ingredients = user_input.split(",")
-user_ingredients = [item.strip() for item in user_input.split(",")]
+
+for ingredient in user_input.split(","):
+    user_ingredients.append(ingredient.strip())
 #Otherwise prompt an error message, "please enter your ingredients separated by commas"
-ingredients.split(",")
 
 
 #put the ingredients into a list. update the list for each element of the split
@@ -18,11 +19,12 @@ ingredients.split(",")
 #print percentage of ingredients matched
 
 while True:
-    ingredients_line = ingredients.readline()
-    for ingredient in ingredients:
+    ingredients_line = computer_ingredients.readline()
+    for ingredient in computer_ingredients:
         if user_ingredients == ingredient:
             matching_ingredients += 1
         else:
             break
+    
 
 #print matching ingredients / total ingredients
