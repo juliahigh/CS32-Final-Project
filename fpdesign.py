@@ -9,7 +9,7 @@ user_input = input("Please list 10 ingredients you have in your kitchen, separat
 
 for ingredient in user_input.split(","):
     user_ingredients.append(ingredient.strip())
-total_ingredients = len(user_ingredients)
+total_ingredients = len(computer_ingredients)
 #Otherwise prompt an error message, "please enter your ingredients separated by commas"
 
 
