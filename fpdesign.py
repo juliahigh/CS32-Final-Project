@@ -1,6 +1,7 @@
 computer_ingredients = open('txts/ingredients.csv')
 matching_ingredients = 0
 total_ingredients = 0
+overlapping_ingredients = 0
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.\nPress Enter to begin.")
 #require an enter to begin
 user_ingredients = []
@@ -8,6 +9,7 @@ user_input = input("Please list 10 ingredients you have in your kitchen, separat
 
 for ingredient in user_input.split(","):
     user_ingredients.append(ingredient.strip())
+total_ingredients = len(user_ingredients)
 #Otherwise prompt an error message, "please enter your ingredients separated by commas"
 
 
@@ -25,6 +27,7 @@ while True:
             matching_ingredients += 1
         else:
             break
-    
+    overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
+    print ("You have" + overlapping_ingredients + "% of the ingredients required to make this dish.")
 
 #print matching ingredients / total ingredients
