@@ -2,31 +2,26 @@ computer_ingredients = open('txts/ingredients.csv')
 matching_ingredients = 0
 total_ingredients = 0
 overlapping_ingredients = 0
-print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.\nPress Enter to begin.")
-#require an enter to begin
+
+print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.")
+input("Press enter to begin.")
+
 user_ingredients = []
-user_input = i input("Please list 10 ingredients you have in your kitchen, separated by commas.")
+user_input = input("Please list 10 ingredients you have in your kitchen, separated by commas.")
 
 for ingredient in user_input.split(","):
-    user_ingredients.append(ingredient.strip())
-total_ingredients = len(computer_ingredients)
-#Otherwise prompt an error message, "please enter your ingredients separated by commas"
+    user_ingredients.append(ingredient.strip().lower())
 
+with open('txts/ingredients.csv') as computer_ingredients:
+    recipe_ingredients = []
+    for ingredient in computer_ingredients:
+        recipe_ingredients.append(ingredient.strip().lower())
 
-#put the ingredients into a list. update the list for each element of the split
-#for each line in ingredients
-#if user input matches ingredients
-#update some variable
-#percentage of ingredients matched = some variable / total ingredients in recipe
-#print percentage of ingredients matched
+total_ingredients = len(recipe_ingredients)
 
-ingredients_line = computer_ingredients.readline()
-for ingredient in computer_ingredients:
+for ingredient in recipe_ingredients:
     if ingredient in user_ingredients:
         matching_ingredients += 1
-    else:
-        break
+
 overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
 print ("You have" + str(overlapping_ingredients) + "% of the ingredients required to make this dish.")
-
-#print matching ingredients / total ingredients
