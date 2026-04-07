@@ -28,6 +28,6 @@ while True:
         else:
             break
     overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
-    print ("You have" + overlapping_ingredients + "% of the ingredients required to make this dish.")
+    print ("You have" + str(overlapping_ingredients) + "% of the ingredients required to make this dish.")
 
 #print matching ingredients / total ingredients
