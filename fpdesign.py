@@ -53,8 +53,10 @@ We've already noticed some things we will have to consider how to handle:
 - Spelling variations (i.e. if they enter red pepper versus red pepper flakes)
 
 Additional significant steps will include:
-- Adding more recipes
-- Ranking the recipes based on which ones have the highest percentage of matching ingredients
+- Adding more recipes and being able to circulate through all ingredients
+- Ranking and suggesting the recipes based on which ones have the highest percentage of matching ingredients
+- For specialized recipes, asking if the user has specialized cooking equipment (i.e. immersion blender)
+- Printing the recipe instructions
 
 
 '''
