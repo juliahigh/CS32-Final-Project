@@ -55,8 +55,8 @@ We've already noticed some things we will have to consider how to handle:
 Additional significant steps will include:
 - Adding more recipes and being able to circulate through all ingredients
 - Ranking and suggesting the recipes based on which ones have the highest percentage of matching ingredients
+- Adding additional ranking criteria, i.e. cuisine, if they're in the mood for fish, pasta, salad, etc.
 - For specialized recipes, asking if the user has specialized cooking equipment (i.e. immersion blender)
 - Printing the recipe instructions
-
 
 '''
