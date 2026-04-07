@@ -3,9 +3,12 @@ matching_ingredients = 0
 total_ingredients = 0
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.\nPress Enter to begin.")
 #require an enter to begin
-user_ingredients = input("Please list 10 ingredients you have in your kitchen, separated by commas.")
+user_input = input("Please list 10 ingredients you have in your kitchen, separated by commas.")
+user_ingredients = user_input.split(",")
+user_ingredients = [item.strip() for item in user_input.split(",")]
 #Otherwise prompt an error message, "please enter your ingredients separated by commas"
 ingredients.split(",")
+
 
 #put the ingredients into a list. update the list for each element of the split
 #for each line in ingredients
