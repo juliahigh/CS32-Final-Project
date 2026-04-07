@@ -19,6 +19,7 @@ while True:
     for ingredient in ingredients:
         if user_ingredients == ingredient:
             matching_ingredients += 1
-        
+        else:
+            break
 
 #print matching ingredients / total ingredients
