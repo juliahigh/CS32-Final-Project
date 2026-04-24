@@ -84,7 +84,7 @@ for recipe_id in recipe_ingredients:
     missing_ingredients = []
     substitutions = []
 
-    #left off here RAUL
+    #left off here
 
 #the total number of ingredients is the number of ingredients in the recipe
 total_ingredients = len(recipe_ingredients)
