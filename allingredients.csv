@@ -1,0 +1,56 @@
+recipe_id,ingredient,family,importance,quantity,unit
+1,san marzano tomatoes,tomatoes,core,1,can
+1,pasta,pasta,core,8,oz
+1,garlic,garlic,core,3,cloves
+1,olive oil,oil,pantry,2,tbsp
+1,basil,herbs,optional,0.25,cup
+
+2,flour,flour,core,1,cup
+2,eggs,eggs,core,2,whole
+2,milk,dairy,core,1,cup
+2,sugar,sugar,pantry,2,tbsp
+2,butter,butter,optional,1,tbsp
+
+3,bread,bread,core,2,slices
+3,cheddar cheese,cheese,core,2,slices
+3,butter,butter,pantry,1,tbsp
+
+4,chicken,chicken,core,1,lb
+4,soy sauce,sauce,core,2,tbsp
+4,broccoli,vegetables,core,1,cup
+4,carrots,vegetables,core,0.5,cup
+4,oil,oil,pantry,1,tbsp
+4,rice,rice,optional,1,cup
+
+5,eggs,eggs,core,3,whole
+5,cheese,cheese,optional,0.5,cup
+5,spinach,vegetables,optional,0.5,cup
+5,butter,butter,pantry,1,tbsp
+
+6,ground beef,beef,core,1,lb
+6,tortillas,tortilla,core,4,whole
+6,lettuce,vegetables,optional,1,cup
+6,cheese,cheese,optional,0.5,cup
+6,salsa,sauce,pantry,0.5,cup
+
+7,tomatoes,tomatoes,core,2,whole
+7,mozzarella,cheese,core,1,ball
+7,basil,herbs,core,0.25,cup
+7,olive oil,oil,pantry,1,tbsp
+
+8,shrimp,seafood,core,1,lb
+8,garlic,garlic,core,3,cloves
+8,butter,butter,core,2,tbsp
+8,lemon,fruit,optional,1,whole
+
+9,rice,rice,core,2,cups
+9,eggs,eggs,core,2,whole
+9,soy sauce,sauce,core,2,tbsp
+9,carrots,vegetables,optional,0.5,cup
+9,peas,vegetables,optional,0.5,cup
+9,oil,oil,pantry,1,tbsp
+
+10,banana,fruit,core,1,whole
+10,milk,dairy,core,1,cup
+10,ice,other,core,1,cup
+10,honey,sugar,optional,1,tbsp
