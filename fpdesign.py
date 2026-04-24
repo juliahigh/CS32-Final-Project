@@ -1,7 +1,5 @@
 import csv
 
-#introduce our recipe + ingredients files
-
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.")
 #enter to begin
 input("Press enter to begin.")
