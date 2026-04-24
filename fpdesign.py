@@ -1,6 +1,6 @@
-CAN YOU SEE THIS
+import csv
 
-matching_ingredients = 0
+#introduce our recipe + ingredients files
 
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.")
 #enter to begin
@@ -8,7 +8,8 @@ input("Press enter to begin.")
 
 #create this empty list of the user's ingredients
 user_ingredients = []
-user_input = input("Please list up to 10 ingredients you have in your kitchen, separated by commas: ")
+#request input
+user_input = input("Please list up to 20 ingredients you have in your kitchen, separated by commas: ")
 
 #take the user's input and split it along the commas. for each of those ingredients...
 for ingredient in user_input.split(","):
@@ -16,45 +17,170 @@ for ingredient in user_input.split(","):
     #confusing between upper and lowercase
     user_ingredients.append(ingredient.strip().lower())
 
-with open('ingredients.csv') as ingredient_file:
-    #create another empty list, this time for the ingredients in the recipe
-    recipe_ingredients = []
-    #for each line of our ingredients file
-    for ingredient in ingredient_file:
-        #add to the actual recipes ingredients
-        recipe_ingredients.append(ingredient.strip().lower())
+#load ingredient families dictionary
+ingredient_families = {}
 
-#the total number of ingredients is the number of ingredients in the recipe
-total_ingredients = len(recipe_ingredients)
+#open the ingredient families file
+with open('ingredientfamilies.csv') as ingredient_family_file:
+    #read through each line of the ingredient family file
+    reader = csv.DictReader(ingredient_family_file)
+    #for each line of our ingredient family file
+    for row in reader:
+        #add to this ingredient families dictionary by labeling the ingredient
+        #that matches up to the .csv file and the family category.
+        #lowercase everything to keep everything standard
+        ingredient_families[row['ingredient'].lower()] = row['family'].lower()
 
-#create an empty list for any missing ingredients
-missing_ingredients = []
-
-for ingredient in recipe_ingredients:
-    if ingredient in user_ingredients:
-        #if the ingredient from the recipe is in the user's list, add 1 to the matching ingredients number
-        matching_ingredients += 1
-        #otherwise, add to the missing ingredient's list
+#find the user's ingredient families
+user_families = set()
+#for each of the user inputted ingredients
+for ingredient in user_ingredients:
+    #if that ingredient is in one of our pre-set ingredient families
+    #this will be more relevant once we add more detail to the ingredient families
+    if ingredient in ingredient_families:
+        #add the family to this set of user families
+        user_families.add(ingredient_families[ingredient])
+    #otherwise, just add the ingredient by itself
     else:
-        missing_ingredients.append(ingredient)
+        user_families.add(ingredient)
 
-#the overlapping ingredients are the percentage
-overlapping_ingredients = ((matching_ingredients/total_ingredients) * 100)
-#print what % of the ingredients required to make this dish
-print ("You have " + str(overlapping_ingredients) + "% of the ingredients required to make this dish.")
-#print which ingredients they're missing
-print("You are missing:", missing_ingredients)
-#if you don't have any of the necessary ingredients...
-if total_ingredients == 0:
-    print("Recipe has no ingredients listed. Time to go grocery shopping!")
+#load up the recipes
+recipes = {}
+
+
+with open ("allrecipes.csv") as recipe_file:
+    reader = csv.DictReader(recipe_file)
+    #for each line in the recipe file
+    for row in reader:
+        #with the recipe id as the key in the dictionary,
+        #save the info that we need to know for each recipe
+        recipes[row['recipe_id']] = {
+            "name": row['name'],
+            "cuisine": row['cuisine'],
+            "instructions": row['instructions'],
+        }
+
+#load the recipe ingredients
+recipe_ingredients = {}
+
+with open("allingredients.csv") as ingredient_file:
+    reader = csv.DictReader(ingredient_file)
+
+    for row in reader:
+        #getting the recipe id which is just the number assigned to it in the file
+        recipe_id = row["recipe_id"]
+        #if the recipe hasn't been added to the dictionary...
+        if row['recipe_id'] not in recipe_ingredients:
+            recipe_ingredients[row['recipe_id']] = []
+
+        #add it to the empty list^^
+        #then store all of the ingredient info, lowercasing when necessary
+        recipe_ingredients[recipe_id].append({
+            "ingredient": row['ingredient'].lower(),
+            "family": row ['family'].lower(),
+            "importance": row['importance'].lower(),
+            "quantity": row['quantity'],
+            "unit": row['unit'],
+        })
+
+#This is our new scoring mechanism.
+#we're still trying to figure out the most sensible weights to use
+#but this just weights the types of items, core, pantry, and optional
+weights = {
+    "core": 1.0,
+    "pantry": 0.5,
+    "optional": 0.25
+}
+
+#operationalizing our varibles and lists
+best_recipe_id = None
+best_score = 0
+best_missing = []
+best_substitutions = []
+
+#for each recipe id,
+for recipe_id in recipe_ingredients:
+    total_score = 0
+    earned_score = 0
+    missing_ingredients = []
+    substitutions = []
+
+    #for each item in the recipe, get the info from the dictionary
+    for item in recipe_ingredients[recipe_id]:
+        ingredient = item['ingredient']
+        family = item['family']
+        importance = item['importance']
+
+        #find how important this ingredient was
+        weight = weights[importance]
+        #add the total possible score for the recipe
+        total_score += weight
+
+        #if the ingredient is a match, then you add the full points
+        if ingredient in user_ingredients:
+            earned_score += weight
+        #if the ingredient is in the same family, it gets similar points
+        #this will make more sense once we've clarified the ingredient families
+        elif family in user_families:
+            earned_score += weight * 0.7
+            #and add it to the substitution options
+            substitutions.append(ingredient)
+
+        #otherwise, the ingredient is missing
+        else:
+            missing_ingredients.append(ingredient)
+
+    #calculate the final match score for the recipe
+    recipe_score = earned_score / total_score * 100
+
+    #if the recipe score is higher than the current best one
+    if recipe_score > best_score:
+        #then set the highest score to that recipe's score
+        best_score = recipe_score
+        #and the best recipe to that recipe, etc
+        best_recipe_id = recipe_id
+        best_missing = missing_ingredients
+        best_substitutions = substitutions
+    #this block is keeping track of the new best recipe
+
+#now time to print the recipe
+if best_recipe_id:
+    #print the title of the recommended recipe, cuisine, and the rounded score
+    print("\nRecommended recipe:", recipes[best_recipe_id]['name'])
+    print("Cuisine:", recipes[best_recipe_id]['cuisine'])
+    print("Match score:", round(best_score, 1), "%")
+
+    #if there are substitutions, suggest them (still working on this)
+    if best_substitutions:
+        print("\nYou can substitute the following ingredients from the same family as:")
+        print(best_substitutions)
+    #print the missing ingredients
+    if best_missing:
+        print("\n You are missing:")
+        print(best_missing)
+    print("\nIngredients needed:")
+
+    #print the final ingredients and quantities
+    for item in recipe_ingredients[best_recipe_id]:
+        print("-", item["quantity"], item["unit"], item["ingredient"])
+
+    #print the instructions - these will be longer for the final version
+    print("\nInstructions:")
+    print(recipes[best_recipe_id]["instructions"])
+
+#if there are no recipes at all..
+else:
+    print("Sorry, none of your ingredients match the recipes in the cookbook. Time to go grocery shopping!")
+
+
 
 '''
-We've already noticed some things we will have to consider how to handle: RAUL
+We've already noticed some things we will have to consider how to handle:
 - Quantities of ingredients
 - Variations of ingredients (i.e. if someone doesn't have san marzano tomatoes but has heirloom, they can still make the dish)
 - Spelling variations (i.e. if they enter red pepper versus red pepper flakes)
 
-Additional significant steps will include: JULIA
+Additional significant steps will include:
 - Adding more recipes and being able to circulate through all ingredients
 - Ranking and suggesting the recipes based on which ones have the highest percentage of matching ingredients
 - Adding additional ranking criteria, i.e. cuisine, if they're in the mood for fish, pasta, salad, etc.
@@ -62,3 +188,7 @@ Additional significant steps will include: JULIA
 - Printing the recipe instructions
 
 '''
+
+
+#we will want to update sauce, family, etc
+#also account for if the user types in spaghetti instead of pasta
