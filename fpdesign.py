@@ -84,7 +84,35 @@ for recipe_id in recipe_ingredients:
     missing_ingredients = []
     substitutions = []
 
-    #left off here
+    for item in recipe_ingredients[recipe_id]:
+        ingredient = item['ingredient']
+        family = item['family']
+        importance = item['importance']
+        
+        weight = weights[importance]
+        total_score += weight
+
+        if ingredient in user_ingredients:
+            earned_score += weight
+        elif family in user_families:
+            earned_score += weight * 0.7
+            substitutions.appent(ingredient)
+
+        else:
+            missing_ingredients.append(ingredient)
+    
+recipe_score = earned_score / total_score * 100
+
+if recipe_score > best_score:
+    best_score = recipe_score
+    best_recipe_id = recipe_id
+    best_missing = missing_ingredients
+    best_substitutions = substitutions
+
+#now time to print the recipe
+
+if best_recipe_id is not None:
+    print("\nRecommended recipe:", recipes[best_recipe_id]['name'])
 
 #the total number of ingredients is the number of ingredients in the recipe
 total_ingredients = len(recipe_ingredients)
