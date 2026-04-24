@@ -1,3 +1,4 @@
+import csv
 
 #introduce our recipe + ingredients files
 
@@ -18,13 +19,72 @@ for ingredient in user_input.split(","):
     #confusing between upper and lowercase
     user_ingredients.append(ingredient.strip().lower())
 
-with open('ingredients.csv') as ingredient_file:
+#load ingredient families
+ingredient_families = {}
+
+with open('ingredients_families.csv') as family_file:
     #create another empty list, this time for the ingredients in the recipe
-    recipe_ingredients = []
+    reader = csv.DictReader(family_file)
     #for each line of our ingredients file
-    for ingredient in ingredient_file:
-        #add to the actual recipes ingredients
-        recipe_ingredients.append(ingredient.strip().lower())
+    for row in reader:
+        ingredient_families[row['ingredient'].lower()] = row['family'].lower()
+
+#find the user's ingredient families
+user_families = []
+
+for ingredient in user_ingredients:
+    if ingredient in ingredient_families:
+        user_families.append(ingredient_families[ingredient])
+    else:
+        user_families.append(ingredient)
+
+#load up the recipes
+recipes = {}
+
+with open ("recipes.csv") as recipe_file:
+    reader = csv.DictReader(recipe_file)
+    for row in reader:
+        recipes[row['recipe_id']] = {
+            "name": row['name'],
+            "cuisine": row['cuisine'],
+            "instructions": row['instructions'],
+        }
+
+#load the recipe ingredients
+recipe_ingredients = {}
+
+with open("recipe_ingredients.csv") as ingredient_file:
+    reader = csv.DictReader(ingredient_file)
+    for row in reader:
+        if row['recipe_id'] not in recipe_ingredients:
+            recipe_ingredients[row['recipe_id']] = []
+        recipe_ingredients[recipe_id].append({
+            "ingredient": row['ingredient'].lower(),
+            "family": row ['family'].lower(),
+            "importance": row['importance'].lower(),
+            "quantity": row['quantity'],
+            "unit": row['unit'],
+        })
+
+#new scoring mechanism
+weights = {
+    "core": 1.0,
+    "pantry": 0.5,
+    "optional": 0.25
+}
+
+best_recipe_id = None
+best_score = 0
+best_missing = []
+best_substitutions = []
+
+for recipe_id in recipe_ingredients:
+    total_score = 0
+    earned_score = 0
+    missing_ingredients = []
+    substitutions = []
+
+    #left off here
 
 #the total number of ingredients is the number of ingredients in the recipe
 total_ingredients = len(recipe_ingredients)
