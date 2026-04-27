@@ -5,6 +5,7 @@ print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will
 input("Press enter to begin.")
 
 #create this empty list of the user's ingredients
+#testing 123
 user_ingredients = []
 #request input
 user_input = input("Please list up to 20 ingredients you have in your kitchen, separated by commas: ")
