@@ -140,6 +140,7 @@ for recipe_id in recipe_ingredients:
         best_recipe_id = recipe_id
         best_missing = missing_ingredients
         best_substitutions = substitutions
+        
     #this block is keeping track of the new best recipe
 
 #now time to print the recipe
@@ -152,12 +153,15 @@ if best_recipe_id:
     #if there are substitutions, suggest them (still working on this)
     if best_substitutions:
         print("\nYou can substitute the following ingredients from the same family as:")
-        print(best_substitutions)
+        for substitution in best_substitutions:
+            print("-", substitution)
+       
     #print the missing ingredients
     if best_missing:
         print("\n You are missing:")
+        for missing in best_missing:
+            print("-", missing)
         print(best_missing)
-    print("\nIngredients needed:")
 
     #print the final ingredients and quantities
     for item in recipe_ingredients[best_recipe_id]:
