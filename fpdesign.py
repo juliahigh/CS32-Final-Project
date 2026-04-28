@@ -1,5 +1,7 @@
 import csv
 
+#raul let me know if you can see this comment! - julia
+
 print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will recommend a recipe.")
 #enter to begin
 input("Press enter to begin.")
