@@ -1,33 +1,212 @@
 ingredient,family
-san marzano tomatoes,tomatoes
-heirloom tomatoes,tomatoes
-roma tomatoes,tomatoes
-cherry tomatoes,tomatoes
 
-cheddar cheese,cheese
+# --- PASTA ---
+spaghetti,pasta
+fettuccine,pasta
+linguine,pasta
+penne,pasta
+rigatoni,pasta
+macaroni,pasta
+farfalle,pasta
+fusilli,pasta
+rotini,pasta
+angel hair pasta,pasta
+cavatappi,pasta
+orecchiette,pasta
+pappardelle,pasta
+lasagna noodles,pasta
+tortellini,pasta
+ravioli,pasta
+gnocchi,pasta
+
+# --- CHEESE ---
+cheddar,cheese
+sharp cheddar,cheese
+mild cheddar,cheese
 mozzarella,cheese
+fresh mozzarella,cheese
+parmesan,cheese
+pecorino romano,cheese
+asiago,cheese
+provolone,cheese
 swiss cheese,cheese
+gouda,cheese
+gruyere,cheese
+fontina,cheese
+brie,cheese
+camembert,cheese
+ricotta,cheese
+cottage cheese,cheese
+cream cheese,cheese
+feta,cheese
+goat cheese,cheese
+blue cheese,cheese
+colby jack,cheese
+monterey jack,cheese
 
-ground beef,beef
-steak,beef
-
+# --- PROTEINS ---
+# chicken
 chicken breast,chicken
 chicken thighs,chicken
+chicken wings,chicken
+ground chicken,chicken
+rotisserie chicken,chicken
+whole chicken, chicken
+chicken, chicken
 
-shrimp,seafood
-salmon,seafood
+# beef
+ground beef,beef
+steak,beef
+sirloin,beef
+ribeye,beef
+brisket,beef
+beef tips,beef
+filet mignon, beef
+beef, beef
 
-spinach,vegetables
-broccoli,vegetables
-carrots,vegetables
-peas,vegetables
-lettuce,vegetables
+# pork
+pork chops,pork
+bacon,pork
+ham,pork
+sausage,pork
+pancetta, pork
+prosciutto, pork
+guanciale, pork
+nduja, pork
+salami, pork
+pork, pork
 
-olive oil,oil
-vegetable oil,oil
+# --- FISH ---
+salmon,fish
+tuna,fish
+cod,fish
+tilapia,fish
+halibut,fish
+trout,fish
+bass,fish
+snapper,fish
+flounder,fish
+haddock,fish
+mackerel,fish
+sardines,fish
+anchovies,fish
+catfish,fish
+pollock,fish
+sole,fish
+grouper,fish
+fish, fish
 
-soy sauce,sauce
-salsa,sauce
+# --- SHELLFISH / OTHER SEAFOOD ---
+shrimp,shellfish
+prawns,shellfish
+crab,shellfish
+lobster,shellfish
+scallops,shellfish
+mussels,shellfish
+clams,shellfish
+oysters,shellfish
+squid,shellfish
+calamari,shellfish
+octopus,shellfish
 
-milk,dairy
-butter,butter
+# plant proteins
+tofu,plant_protein
+tempeh,plant_protein
+chickpeas,plant_protein
+lentils,plant_protein
+black beans,plant_protein
+kidney beans,plant_protein
+
+# eggs
+eggs,eggs
+
+# --- FRUIT ---
+banana,fruit
+apple,fruit
+pear,fruit
+orange,fruit
+lemon,fruit
+lime,fruit
+grapefruit,fruit
+strawberries,fruit
+blueberries,fruit
+raspberries,fruit
+blackberries,fruit
+pineapple,fruit
+mango,fruit
+peach,fruit
+plum,fruit
+cherries,fruit
+grapes,fruit
+watermelon,fruit
+cantaloupe,fruit
+
+# --- HERBS ---
+basil,herbs
+parsley,herbs
+cilantro,herbs
+oregano,herbs
+thyme,herbs
+rosemary,herbs
+sage,herbs
+dill,herbs
+mint,herbs
+chives,herbs
+tarragon,herbs
+marjoram,herbs
+
+# --- SEASONINGS / SPICES ---
+salt,seasoning
+black pepper,seasoning
+white pepper,seasoning
+red pepper flakes,seasoning
+chili powder,seasoning
+paprika,seasoning
+smoked paprika,seasoning
+cayenne pepper,seasoning
+garlic powder,seasoning
+onion powder,seasoning
+cumin,seasoning
+turmeric,seasoning
+curry powder,seasoning
+italian seasoning,seasoning
+five spice powder,seasoning
+ground ginger,seasoning
+nutmeg,seasoning
+cinnamon,seasoning
+
+# --- SAUCES (BROKEN INTO TYPES) ---
+
+# asian sauces
+soy sauce,asian_sauce
+low sodium soy sauce,asian_sauce
+tamari,asian_sauce
+teriyaki sauce,asian_sauce
+hoisin sauce,asian_sauce
+fish sauce,asian_sauce
+oyster sauce,asian_sauce
+
+# italian / tomato sauces
+tomato sauce,tomato_sauce
+marinara,tomato_sauce
+arrabbiata sauce,tomato_sauce
+vodka sauce,tomato_sauce
+pizza sauce,tomato_sauce
+
+# creamy sauces
+alfredo sauce,cream_sauce
+cream sauce,cream_sauce
+cheese sauce,cream_sauce
+
+# mexican sauces
+salsa,mexican_sauce
+pico de gallo,mexican_sauce
+enchilada sauce,mexican_sauce
+taco sauce,mexican_sauce
+
+# condiments / general sauces
+ketchup,condiment
+mustard,condiment
+mayonnaise,condiment
+bbq sauce,condiment
+hot sauce,condiment
