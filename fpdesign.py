@@ -13,6 +13,7 @@ input("Press enter to begin.")
 user_ingredients = []
 #request input
 user_input = input("Please list up to 20 ingredients you have in your kitchen, separated by commas: ")
+user_cuisine = input("What cuisine would you like to have? The options are:\nItalian\nAsian\nMexican\nAmerican\nFrench\nIndian\nSeafood\nRussian\nGreek\nMiddle Eastern")
 
 #take the user's input and split it along the commas. for each of those ingredients...
 for ingredient in user_input.split(","):
@@ -99,6 +100,9 @@ best_recipe_id = None
 best_score = 0
 best_missing = []
 best_substitutions = []
+
+
+
 
 #for each recipe id,
 for recipe_id in recipe_ingredients:
