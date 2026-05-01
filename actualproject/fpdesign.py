@@ -182,22 +182,5 @@ else:
     print("Sorry, none of your ingredients match the recipes in the cookbook. Time to go grocery shopping!")
 
 
-
-'''
-We've already noticed some things we will have to consider how to handle:
-- Quantities of ingredients
-- Variations of ingredients (i.e. if someone doesn't have san marzano tomatoes but has heirloom, they can still make the dish)
-- Spelling variations (i.e. if they enter red pepper versus red pepper flakes)
-
-Additional significant steps will include:
-- Adding more recipes and being able to circulate through all ingredients
-- Ranking and suggesting the recipes based on which ones have the highest percentage of matching ingredients
-- Adding additional ranking criteria, i.e. cuisine, if they're in the mood for fish, pasta, salad, etc.
-- For specialized recipes, asking if the user has specialized cooking equipment (i.e. immersion blender)
-- Printing the recipe instructions
-
-'''
-
-
 #we will want to update sauce, family, etc
 #also account for if the user types in spaghetti instead of pasta
