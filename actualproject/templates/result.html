@@ -10,7 +10,7 @@
             <h2>Possible substitutions</h2>
             <ul>
                 {% for user_ingredient, recipe_ingredient in result.substitutions %}
-                    <li>Use {{ user_ingredient }} instead of {{ recipe_ingredient }}</li>
+                    <li>You have {{ user_ingredient }}, which you can use instead of {{ recipe_ingredient }}</li>
                 {% endfor %}
             </ul>
         {% endif %}

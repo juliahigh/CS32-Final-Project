@@ -5,12 +5,13 @@ print ("Welcome to the CS32 cookbook!\nYou tell us your ingredients, and we will
 input("Press enter to begin.")
 
 #create this empty list of the user's ingredients
-#testing 123
 user_ingredients = []
-#request input
-user_input = input("Please list up to 20 ingredients you have in your kitchen, separated by commas: ")
-user_cuisine = input("What cuisine would you like to have? The options are:\nItalian\nAsian\nMexican\nAmerican\nFrench\nIndian\nSeafood\nRussian\nGreek\nMiddle Eastern")
 
+#request ingredients
+user_input = input("Please list up to 20 ingredients you have in your kitchen, separated by commas: ")
+
+#request the desired cuisine
+user_cuisine = input("What cuisine would you like to have? The options are:\nItalian\nAsian\nMexican\nAmerican\nFrench\nIndian\nSeafood\nRussian\nGreek\nMiddle Eastern")
 
 #take the user's input and split it along the commas. for each of those ingredients...
 for ingredient in user_input.split(","):
@@ -27,7 +28,7 @@ with open('ingredientfamilies.csv') as ingredient_family_file:
     reader = csv.DictReader(ingredient_family_file)
     #for each line of our ingredient family file
     for row in reader:
-        #add to this ingredient families dictionary by labeling the ingredient
+        # add to this ingredient families dictionary by labeling the ingredient
         #that matches up to the .csv file and the family category.
         #lowercase everything to keep everything standard
         ingredient_families[row['ingredient'].lower()] = row['family'].lower()
@@ -85,8 +86,7 @@ with open("allingredients.csv") as ingredient_file:
         })
 
 #This is our new scoring mechanism.
-#we're still trying to figure out the most sensible weights to use
-#but this just weights the types of items, core, pantry, and optional
+#we've changed the weights to only consider core and optional ingredients
 weights = {
     "core": 1.0,
     "optional": 0.5
@@ -120,12 +120,15 @@ for recipe_id in recipe_ingredients:
         #if the ingredient is a match, then you add the full points
         if ingredient in user_ingredients:
             earned_score += weight
-        #if the ingredient is in the same family, it gets similar points
+        #if the ingredient is in the same family, it gets less points
         elif family in user_families:
             earned_score += weight * 0.6
 
+            #for each of the user's ingredients
             for user_ingredient in user_ingredients:
+                #if the user's ingredient has a substitution in the same family
                 if user_ingredient in ingredient_families and ingredient_families[user_ingredient] == family:
+                    #add that substitution to the list 
                     substitutions.append((user_ingredient, ingredient))
                     break
 
@@ -154,11 +157,11 @@ if best_recipe_id:
     print("Cuisine:", recipes[best_recipe_id]['cuisine'])
     print("Match score:", round(best_score, 1), "%")
 
-    #if there are substitutions, suggest them (still working on this)
+    #if there are substitutions, suggest them 
     if best_substitutions:
         print("\nPossible substitutions:")
         for user_ingredient, recipe_ingredient in best_substitutions:
-            print("-", "Use", user_ingredient, "instead of", recipe_ingredient)
+            print("-", "You have", user_ingredient, ", which you can use instead of", recipe_ingredient)
        
     #print the missing ingredients
     if best_missing:
