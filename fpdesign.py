@@ -91,8 +91,7 @@ with open("allingredients.csv") as ingredient_file:
 #but this just weights the types of items, core, pantry, and optional
 weights = {
     "core": 1.0,
-    "pantry": 0.5,
-    "optional": 0.25
+    "optional": 0.5
 }
 
 #operationalizing our varibles and lists
@@ -123,11 +122,13 @@ for recipe_id in recipe_ingredients:
         if ingredient in user_ingredients:
             earned_score += weight
         #if the ingredient is in the same family, it gets similar points
-        #this will make more sense once we've clarified the ingredient families
         elif family in user_families:
-            earned_score += weight * 0.7
-            #and add it to the substitution options
-            substitutions.append(ingredient)
+            earned_score += weight * 0.6
+
+            for user_ingredient in user_ingredients:
+                if user_ingredient in ingredient_families and ingredient_families[user_ingredient] == family:
+                    substitutions.append((user_ingredient, ingredient))
+                    break
 
         #otherwise, the ingredient is missing
         else:
@@ -156,16 +157,15 @@ if best_recipe_id:
 
     #if there are substitutions, suggest them (still working on this)
     if best_substitutions:
-        print("\nYou can substitute the following ingredients from the same family as:")
-        for substitution in best_substitutions:
-            print("-", substitution)
+        print("\nPossible substitutions:")
+        for user_ingredient, recipe_ingredient in best_substitutions:
+            print("-", "Use", user_ingredient, "instead of", recipe_ingredient)
        
     #print the missing ingredients
     if best_missing:
         print("\n You are missing:")
         for missing in best_missing:
             print("-", missing)
-        print(best_missing)
 
     #print the final ingredients and quantities
     for item in recipe_ingredients[best_recipe_id]:
