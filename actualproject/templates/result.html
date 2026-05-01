@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+    {% if result %}
+        <h1>{{ result.name }}</h1>
+        <p>Cuisine: {{ result.cuisine }}</p>
+        <p>Match score: {{ result.score }}%</p>
+
+        {% if result.substitutions %}
+            <h2>Possible substitutions</h2>
+            <ul>
+                {% for user_ingredient, recipe_ingredient in result.substitutions %}
+                    <li>Use {{ user_ingredient }} instead of {{ recipe_ingredient }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if result.missing %}
+            <h2>Missing ingredients</h2>
+            <ul>
+                {% for item in result.missing %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h2>Ingredients</h2>
+        <ul>
+            {% for item in result.ingredients %}
+                <li>{{ item.quantity }} {{ item.unit }} {{ item.ingredient }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Instructions</h2>
+        <p>{{ result.instructions }}</p>
+    {% else %}
+        <h1>No recipe found</h1>
+        <p>Try different ingredients or cuisine.</p>
+    {% endif %}
+
+    <a href="/">Search again</a>
+</body>
+</html>
