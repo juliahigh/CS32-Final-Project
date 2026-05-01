@@ -1,60 +1,563 @@
-#testing for the last time - julia
-
 recipe_id,ingredient,family,importance,quantity,unit
-1,san marzano tomatoes,tomatoes,core,1,can
-1,pasta,pasta,core,8,oz
-1,garlic,garlic,core,3,cloves
-1,olive oil,oil,pantry,2,tbsp
-1,basil,herbs,optional,0.25,cup
 
-2,flour,flour,core,1,cup
-2,eggs,eggs,core,2,whole
-2,milk,dairy,core,1,cup
-2,sugar,sugar,pantry,2,tbsp
-2,butter,butter,optional,1,tbsp
-
-3,bread,bread,core,2,slices
-3,cheddar cheese,cheese,core,2,slices
-3,butter,butter,pantry,1,tbsp
-
-4,chicken,chicken,core,1,lb
-4,soy sauce,sauce,core,2,tbsp
-4,broccoli,vegetables,core,1,cup
-4,carrots,vegetables,core,0.5,cup
-4,oil,oil,pantry,1,tbsp
-4,rice,rice,optional,1,cup
-
-5,eggs,eggs,core,3,whole
-5,cheese,cheese,optional,0.5,cup
-5,spinach,vegetables,optional,0.5,cup
-5,butter,butter,pantry,1,tbsp
-
-6,ground beef,beef,core,1,lb
-6,tortillas,tortilla,core,4,whole
-6,lettuce,vegetables,optional,1,cup
-6,cheese,cheese,optional,0.5,cup
-6,salsa,sauce,pantry,0.5,cup
-
-7,tomatoes,tomatoes,core,2,whole
-7,mozzarella,cheese,core,1,ball
-7,basil,herbs,core,0.25,cup
-7,olive oil,oil,pantry,1,tbsp
-
-8,shrimp,seafood,core,1,lb
-8,garlic,garlic,core,3,cloves
-8,butter,butter,core,2,tbsp
-8,lemon,fruit,optional,1,whole
-
-9,rice,rice,core,2,cups
-9,eggs,eggs,core,2,whole
-9,soy sauce,sauce,core,2,tbsp
-9,carrots,vegetables,optional,0.5,cup
-9,peas,vegetables,optional,0.5,cup
-9,oil,oil,pantry,1,tbsp
-
-10,banana,fruit,core,1,whole
-10,milk,dairy,core,1,cup
-10,ice,other,core,1,cup
-10,honey,sugar,optional,1,tbsp
-
-#julia let me know if you can see this comment pls - raul
+1,spaghetti,pasta,core,8,oz
+1,ground beef,beef,core,1,lb
+1,yellow onion,vegetables,core,1,whole
+1,garlic,vegetables,core,3,cloves
+1,tomato sauce,tomato_sauce,core,2,cups
+1,olive oil,oil,core,2,tbsp
+1,salt,seasoning,optional,1,tsp
+1,black pepper,seasoning,optional,1,tsp
+2,fettuccine,pasta,core,8,oz
+2,chicken breast,chicken,core,1,lb
+2,heavy cream,dairy,core,1,cup
+2,butter,butter,core,2,tbsp
+2,parmesan,cheese,core,0.5,cup
+2,garlic,vegetables,core,2,cloves
+2,salt,seasoning,optional,1,tsp
+3,broccoli,vegetables,core,1,cup
+3,carrots,vegetables,core,1,cup
+3,red bell pepper,vegetables,core,1,cup
+3,soy sauce,asian_sauce,core,2,tbsp
+3,vegetable oil,oil,core,1,tbsp
+3,garlic,vegetables,core,2,cloves
+4,ground beef,beef,core,1,lb
+4,corn tortillas,tortilla,core,4,whole
+4,romaine lettuce,leafy_greens,core,1,cup
+4,cheddar,cheese,core,0.5,cup
+4,salsa,mexican_sauce,core,0.5,cup
+4,chili powder,seasoning,optional,1,tsp
+5,chicken breast,chicken,core,1,lb
+5,romaine lettuce,leafy_greens,core,2,cups
+5,cherry tomatoes,tomatoes,core,1,cup
+5,cucumber,vegetables,core,1,cup
+5,olive oil,oil,core,2,tbsp
+5,black pepper,seasoning,optional,0.5,tsp
+6,shrimp,shellfish,core,1,lb
+6,garlic,vegetables,core,3,cloves
+6,butter,butter,core,2,tbsp
+6,lemon,fruit,core,1,whole
+6,linguine,pasta,core,8,oz
+7,jasmine rice,rice,core,2,cups
+7,eggs,eggs,core,2,whole
+7,soy sauce,asian_sauce,core,2,tbsp
+7,peas,vegetables,core,0.5,cup
+7,carrots,vegetables,core,0.5,cup
+7,vegetable oil,oil,core,1,tbsp
+8,eggs,eggs,core,3,whole
+8,cheddar,cheese,core,0.5,cup
+8,spinach,leafy_greens,core,0.5,cup
+8,butter,butter,core,1,tbsp
+9,chicken thighs,chicken,core,1,lb
+9,yellow onion,vegetables,core,1,whole
+9,garlic,vegetables,core,3,cloves
+9,coconut milk,dairy,core,1,cup
+9,basmati rice,rice,core,1,cup
+9,curry powder,seasoning,optional,1,tbsp
+10,sourdough bread,bread,core,2,slices
+10,fresh mozzarella,cheese,core,0.5,cup
+10,roma tomatoes,tomatoes,core,1,whole
+10,basil,herbs,optional,0.25,cup
+10,olive oil,oil,core,1,tbsp
+11,beef strips,beef,core,1,lb
+11,broccoli,vegetables,core,1,cup
+11,snow peas,vegetables,core,1,cup
+11,soy sauce,asian_sauce,core,2,tbsp
+11,jasmine rice,rice,core,1,cup
+12,penne,pasta,core,8,oz
+12,zucchini,vegetables,core,1,cup
+12,red bell pepper,vegetables,core,1,cup
+12,cherry tomatoes,tomatoes,core,1,cup
+12,parmesan,cheese,core,0.5,cup
+12,olive oil,oil,core,2,tbsp
+13,sliced turkey,turkey,core,4,slices
+13,whole wheat bread,bread,core,2,slices
+13,romaine lettuce,leafy_greens,core,0.5,cup
+13,roma tomato,tomatoes,core,1,whole
+13,swiss cheese,cheese,core,1,slice
+13,mayonnaise,condiment,optional,1,tbsp
+14,banana,fruit,core,1,whole
+14,eggs,eggs,core,2,whole
+14,all purpose flour,flour,core,1,cup
+14,milk,dairy,core,0.5,cup
+14,cinnamon,seasoning,optional,0.5,tsp
+15,salmon,fish,core,1,lb
+15,lemon,fruit,core,1,whole
+15,garlic,vegetables,core,2,cloves
+15,olive oil,oil,core,1,tbsp
+15,black pepper,seasoning,optional,0.5,tsp
+16,chicken breast,chicken,core,1,lb
+16,breadcrumbs,grains,core,1,cup
+16,eggs,eggs,core,2,whole
+16,marinara,tomato_sauce,core,1,cup
+16,mozzarella,cheese,core,1,cup
+16,parmesan,cheese,core,0.25,cup
+16,olive oil,oil,core,2,tbsp
+16,italian seasoning,seasoning,optional,1,tsp
+17,ground beef,beef,core,1,lb
+17,burger buns,bread,core,2,whole
+17,romaine lettuce,leafy_greens,core,0.5,cup
+17,roma tomato,tomatoes,core,1,whole
+17,cheddar,cheese,core,2,slices
+17,ketchup,condiment,optional,1,tbsp
+17,mustard,condiment,optional,1,tbsp
+18,bacon,pork,core,4,slices
+18,sourdough bread,bread,core,2,slices
+18,romaine lettuce,leafy_greens,core,0.5,cup
+18,roma tomato,tomatoes,core,1,whole
+18,mayonnaise,condiment,optional,1,tbsp
+19,pizza dough,grains,core,1,ball
+19,tomato sauce,tomato_sauce,core,0.5,cup
+19,fresh mozzarella,cheese,core,1,cup
+19,basil,herbs,optional,0.25,cup
+19,olive oil,oil,core,1,tbsp
+20,chicken breast,chicken,core,1,cup
+20,flour tortillas,tortilla,core,2,whole
+20,monterey jack,cheese,core,1,cup
+20,butter,butter,core,1,tbsp
+20,salsa,mexican_sauce,core,0.25,cup
+21,carrots,vegetables,core,1,cup
+21,celery,vegetables,core,1,cup
+21,yellow onion,vegetables,core,1,whole
+21,potatoes,vegetables,core,1,cup
+21,vegetable broth,broth,core,4,cups
+21,garlic,vegetables,core,2,cloves
+21,thyme,herbs,optional,1,tsp
+22,chicken breast,chicken,core,1,lb
+22,egg noodles,pasta,core,2,cups
+22,carrots,vegetables,core,1,cup
+22,celery,vegetables,core,1,cup
+22,yellow onion,vegetables,core,1,whole
+22,chicken broth,broth,core,4,cups
+22,parsley,herbs,optional,1,tbsp
+23,ground beef,beef,core,1,lb
+23,kidney beans,plant_protein,core,1,can
+23,black beans,plant_protein,core,1,can
+23,crushed tomatoes,tomatoes,core,1,can
+23,yellow onion,vegetables,core,1,whole
+23,chili powder,seasoning,optional,1,tbsp
+23,cumin,seasoning,optional,1,tsp
+24,jasmine rice,rice,core,2,cups
+24,eggs,eggs,core,2,whole
+24,soy sauce,asian_sauce,core,2,tbsp
+24,peas,vegetables,core,0.5,cup
+24,carrots,vegetables,core,0.5,cup
+24,green onions,vegetables,core,0.25,cup
+24,vegetable oil,oil,core,1,tbsp
+25,shrimp,shellfish,core,1,lb
+25,corn tortillas,tortilla,core,4,whole
+25,cabbage,vegetables,core,1,cup
+25,lime,fruit,core,1,whole
+25,salsa,mexican_sauce,core,0.5,cup
+25,avocado,fruit,core,1,whole
+25,chili powder,seasoning,optional,1,tsp
+26,salmon,fish,core,1,lb
+26,olive oil,oil,core,1,tbsp
+26,lemon,fruit,core,1,whole
+26,garlic powder,seasoning,optional,1,tsp
+26,black pepper,seasoning,optional,1,tsp
+27,chicken breast,chicken,core,1,lb
+27,romaine lettuce,leafy_greens,core,2,cups
+27,parmesan,cheese,core,0.5,cup
+27,caesar dressing,condiment,core,0.5,cup
+27,croutons,grains,core,0.5,cup
+28,spaghetti,pasta,core,8,oz
+28,spinach,leafy_greens,core,1,cup
+28,garlic,vegetables,core,2,cloves
+28,olive oil,oil,core,1,tbsp
+28,parmesan,cheese,core,0.25,cup
+28,red pepper flakes,seasoning,optional,0.5,tsp
+29,macaroni,pasta,core,8,oz
+29,cheddar,cheese,core,1,cup
+29,milk,dairy,core,1,cup
+29,butter,butter,core,2,tbsp
+29,all purpose flour,flour,core,2,tbsp
+29,paprika,seasoning,optional,0.5,tsp
+30,sirloin,beef,core,1,lb
+30,mushrooms,vegetables,core,1,cup
+30,yellow onion,vegetables,core,1,whole
+30,sour cream,dairy,core,1,cup
+30,egg noodles,pasta,core,2,cups
+30,beef broth,broth,core,1,cup
+31,chicken thighs,chicken,core,1,lb
+31,teriyaki sauce,asian_sauce,core,0.5,cup
+31,jasmine rice,rice,core,2,cups
+31,broccoli,vegetables,core,1,cup
+31,green onions,vegetables,core,0.25,cup
+32,cauliflower,vegetables,core,1,cup
+32,carrots,vegetables,core,1,cup
+32,potatoes,vegetables,core,1,cup
+32,chickpeas,plant_protein,core,1,can
+32,coconut milk,dairy,core,1,cup
+32,curry powder,seasoning,optional,1,tbsp
+33,tuna,fish,core,1,can
+33,mayonnaise,condiment,core,0.5,cup
+33,whole wheat bread,bread,core,2,slices
+33,romaine lettuce,leafy_greens,core,0.5,cup
+33,celery,vegetables,core,0.25,cup
+34,cherry tomatoes,tomatoes,core,1,cup
+34,cucumber,vegetables,core,1,cup
+34,kalamata olives,vegetables,core,0.5,cup
+34,feta,cheese,core,0.5,cup
+34,red onion,vegetables,core,0.25,cup
+34,olive oil,oil,core,1,tbsp
+34,oregano,herbs,optional,1,tsp
+35,chicken breast,chicken,core,1,lb
+35,red bell pepper,vegetables,core,1,cup
+35,yellow bell pepper,vegetables,core,1,cup
+35,yellow onion,vegetables,core,1,whole
+35,flour tortillas,tortilla,core,4,whole
+35,cumin,seasoning,optional,1,tsp
+36,ground beef,beef,core,1,lb
+36,flour tortilla,tortilla,core,1,large
+36,brown rice,rice,core,1,cup
+36,black beans,plant_protein,core,1,cup
+36,cheddar,cheese,core,0.5,cup
+36,salsa,mexican_sauce,core,0.5,cup
+37,fusilli,pasta,core,8,oz
+37,pesto,herbs,core,0.5,cup
+37,parmesan,cheese,core,0.5,cup
+37,cherry tomatoes,tomatoes,core,1,cup
+38,baguette,bread,core,1,loaf
+38,butter,butter,core,2,tbsp
+38,garlic,vegetables,core,3,cloves
+38,parsley,herbs,optional,1,tbsp
+39,chicken breast,chicken,core,1,lb
+39,carrots,vegetables,core,1,cup
+39,peas,vegetables,core,1,cup
+39,celery,vegetables,core,0.5,cup
+39,pie crust,grains,core,1,whole
+39,heavy cream,dairy,core,1,cup
+39,chicken broth,broth,core,1,cup
+40,ground beef,beef,core,1,lb
+40,breadcrumbs,grains,core,0.5,cup
+40,eggs,eggs,core,1,whole
+40,marinara,tomato_sauce,core,1,cup
+40,spaghetti,pasta,core,8,oz
+40,parmesan,cheese,core,0.25,cup
+41,eggs,eggs,core,3,whole
+41,spinach,leafy_greens,core,1,cup
+41,mushrooms,vegetables,core,0.5,cup
+41,cheddar,cheese,core,0.5,cup
+41,butter,butter,core,1,tbsp
+42,chicken breast,chicken,core,1,lb
+42,burger buns,bread,core,2,whole
+42,romaine lettuce,leafy_greens,core,0.5,cup
+42,roma tomato,tomatoes,core,1,whole
+42,mayonnaise,condiment,optional,1,tbsp
+43,sourdough bread,bread,core,2,slices
+43,avocado,fruit,core,1,whole
+43,lemon,fruit,core,0.5,whole
+43,red pepper flakes,seasoning,optional,0.5,tsp
+43,salt,seasoning,optional,0.5,tsp
+44,roma tomatoes,tomatoes,core,2,cups
+44,vegetable broth,broth,core,2,cups
+44,heavy cream,dairy,core,0.5,cup
+44,yellow onion,vegetables,core,1,whole
+44,garlic,vegetables,core,2,cloves
+44,basil,herbs,optional,1,tbsp
+45,shrimp,shellfish,core,1,lb
+45,fettuccine,pasta,core,8,oz
+45,heavy cream,dairy,core,1,cup
+45,parmesan,cheese,core,0.5,cup
+45,garlic,vegetables,core,2,cloves
+45,butter,butter,core,2,tbsp
+46,chicken breast,chicken,core,1,lb
+46,broccoli,vegetables,core,1,cup
+46,carrots,vegetables,core,0.5,cup
+46,red bell pepper,vegetables,core,0.5,cup
+46,soy sauce,asian_sauce,core,2,tbsp
+46,vegetable oil,oil,core,1,tbsp
+47,sirloin,beef,core,1,lb
+47,red bell pepper,vegetables,core,1,cup
+47,yellow onion,vegetables,core,1,whole
+47,zucchini,vegetables,core,1,cup
+47,olive oil,oil,core,1,tbsp
+48,pizza dough,grains,core,1,ball
+48,mozzarella,cheese,core,1,cup
+48,mushrooms,vegetables,core,0.5,cup
+48,red bell pepper,vegetables,core,0.5,cup
+48,red onion,vegetables,core,0.25,cup
+48,tomato sauce,tomato_sauce,core,0.5,cup
+49,chicken breast,chicken,core,1,cup
+49,flour tortilla,tortilla,core,1,whole
+49,romaine lettuce,leafy_greens,core,0.5,cup
+49,cheddar,cheese,core,0.25,cup
+49,ranch dressing,condiment,core,2,tbsp
+50,cod,fish,core,1,lb
+50,corn tortillas,tortilla,core,4,whole
+50,cabbage,vegetables,core,1,cup
+50,lime,fruit,core,1,whole
+50,salsa,mexican_sauce,core,0.5,cup
+50,cilantro,herbs,optional,0.25,cup
+51,lasagna noodles,pasta,core,8,oz
+51,ground beef,beef,core,1,lb
+51,ricotta,cheese,core,1,cup
+51,mozzarella,cheese,core,1,cup
+51,marinara,tomato_sauce,core,2,cups
+51,parmesan,cheese,core,0.25,cup
+52,pizza dough,grains,core,1,ball
+52,chicken breast,chicken,core,1,cup
+52,alfredo sauce,cream_sauce,core,1,cup
+52,mozzarella,cheese,core,1,cup
+52,spinach,leafy_greens,core,0.5,cup
+53,brown rice,rice,core,2,cups
+53,broccoli,vegetables,core,1,cup
+53,carrots,vegetables,core,0.5,cup
+53,peas,vegetables,core,0.5,cup
+53,soy sauce,asian_sauce,core,2,tbsp
+53,vegetable oil,oil,core,1,tbsp
+54,ground turkey,turkey,core,1,lb
+54,burger buns,bread,core,2,whole
+54,romaine lettuce,leafy_greens,core,0.5,cup
+54,roma tomato,tomatoes,core,1,whole
+54,swiss cheese,cheese,core,2,slices
+55,chicken thighs,chicken,core,1,lb
+55,carrots,vegetables,core,1,cup
+55,celery,vegetables,core,1,cup
+55,yellow onion,vegetables,core,1,whole
+55,chicken broth,broth,core,4,cups
+55,egg noodles,pasta,core,1,cup
+56,beef strips,beef,core,1,lb
+56,broccoli,vegetables,core,1,cup
+56,snap peas,vegetables,core,1,cup
+56,carrots,vegetables,core,0.5,cup
+56,soy sauce,asian_sauce,core,2,tbsp
+56,jasmine rice,rice,core,1,cup
+57,spinach,leafy_greens,core,2,cups
+57,strawberries,fruit,core,0.5,cup
+57,goat cheese,cheese,core,0.25,cup
+57,walnuts,nuts,core,0.25,cup
+57,olive oil,oil,core,1,tbsp
+58,penne,pasta,core,8,oz
+58,chicken breast,chicken,core,1,cup
+58,marinara,tomato_sauce,core,1,cup
+58,mozzarella,cheese,core,0.5,cup
+58,garlic,vegetables,core,2,cloves
+59,whole wheat bread,bread,core,2,slices
+59,cucumber,vegetables,core,0.5,cup
+59,avocado,fruit,core,0.5,whole
+59,spinach,leafy_greens,core,0.5,cup
+59,tomato,tomatoes,core,1,whole
+59,hummus,plant_protein,core,2,tbsp
+60,ground beef,beef,core,1,lb
+60,corn tortillas,tortilla,core,4,whole
+60,romaine lettuce,leafy_greens,core,1,cup
+60,cheddar,cheese,core,0.5,cup
+60,salsa,mexican_sauce,core,0.5,cup
+61,chicken thighs,chicken,core,1,lb
+61,coconut milk,dairy,core,1,cup
+61,yellow onion,vegetables,core,1,whole
+61,garlic,vegetables,core,2,cloves
+61,basmati rice,rice,core,1,cup
+61,curry powder,seasoning,optional,1,tbsp
+62,sweet potato,vegetables,core,1,cup
+62,cauliflower,vegetables,core,1,cup
+62,chickpeas,plant_protein,core,1,can
+62,coconut milk,dairy,core,1,cup
+62,basmati rice,rice,core,1,cup
+62,curry powder,seasoning,optional,1,tbsp
+63,shrimp,shellfish,core,1,lb
+63,linguine,pasta,core,8,oz
+63,garlic,vegetables,core,3,cloves
+63,butter,butter,core,2,tbsp
+63,lemon,fruit,core,1,whole
+64,sourdough bread,bread,core,2,slices
+64,cheddar,cheese,core,2,slices
+64,butter,butter,core,1,tbsp
+65,pizza dough,grains,core,1,ball
+65,chicken breast,chicken,core,1,cup
+65,mozzarella,cheese,core,1,cup
+65,tomato sauce,tomato_sauce,core,0.5,cup
+65,red onion,vegetables,core,0.25,cup
+66,pizza dough,grains,core,1,ball
+66,ground beef,beef,core,1,cup
+66,mozzarella,cheese,core,1,cup
+66,tomato sauce,tomato_sauce,core,0.5,cup
+66,mushrooms,vegetables,core,0.5,cup
+67,rigatoni,pasta,core,8,oz
+67,zucchini,vegetables,core,1,cup
+67,mushrooms,vegetables,core,1,cup
+67,red bell pepper,vegetables,core,0.5,cup
+67,marinara,tomato_sauce,core,1,cup
+68,chicken breast,chicken,core,1,cup
+68,brown rice,rice,core,1,cup
+68,broccoli,vegetables,core,1,cup
+68,carrots,vegetables,core,0.5,cup
+68,teriyaki sauce,asian_sauce,core,0.25,cup
+69,beef strips,beef,core,1,cup
+69,jasmine rice,rice,core,1,cup
+69,broccoli,vegetables,core,1,cup
+69,snap peas,vegetables,core,0.5,cup
+69,soy sauce,asian_sauce,core,2,tbsp
+70,brown rice,rice,core,1,cup
+70,broccoli,vegetables,core,1,cup
+70,carrots,vegetables,core,0.5,cup
+70,edamame,plant_protein,core,0.5,cup
+70,teriyaki sauce,asian_sauce,core,0.25,cup
+71,chicken breast,chicken,core,1,cup
+71,flour tortilla,tortilla,core,1,whole
+71,celery,vegetables,core,0.25,cup
+71,mayonnaise,condiment,core,2,tbsp
+71,romaine lettuce,leafy_greens,core,0.5,cup
+72,tuna,fish,core,1,can
+72,fusilli,pasta,core,8,oz
+72,mayonnaise,condiment,core,0.25,cup
+72,celery,vegetables,core,0.25,cup
+72,peas,vegetables,core,0.5,cup
+73,shrimp,shellfish,core,1,lb
+73,jasmine rice,rice,core,2,cups
+73,eggs,eggs,core,2,whole
+73,peas,vegetables,core,0.5,cup
+73,carrots,vegetables,core,0.5,cup
+73,soy sauce,asian_sauce,core,2,tbsp
+74,lo mein noodles,pasta,core,8,oz
+74,chicken breast,chicken,core,1,cup
+74,broccoli,vegetables,core,1,cup
+74,carrots,vegetables,core,0.5,cup
+74,soy sauce,asian_sauce,core,2,tbsp
+75,lo mein noodles,pasta,core,8,oz
+75,beef strips,beef,core,1,cup
+75,snap peas,vegetables,core,0.5,cup
+75,red bell pepper,vegetables,core,0.5,cup
+75,soy sauce,asian_sauce,core,2,tbsp
+76,lo mein noodles,pasta,core,8,oz
+76,broccoli,vegetables,core,1,cup
+76,carrots,vegetables,core,0.5,cup
+76,mushrooms,vegetables,core,0.5,cup
+76,soy sauce,asian_sauce,core,2,tbsp
+77,chicken breast,chicken,core,1,cup
+77,brown rice,rice,core,1,cup
+77,black beans,plant_protein,core,1,cup
+77,flour tortilla,tortilla,core,1,large
+77,salsa,mexican_sauce,core,0.5,cup
+77,cheddar,cheese,core,0.5,cup
+78,brown rice,rice,core,1,cup
+78,black beans,plant_protein,core,1,cup
+78,sweet potato,vegetables,core,1,cup
+78,bell pepper,vegetables,core,0.5,cup
+78,flour tortilla,tortilla,core,1,large
+78,salsa,mexican_sauce,core,0.5,cup
+79,shrimp,shellfish,core,1,cup
+79,brown rice,rice,core,1,cup
+79,black beans,plant_protein,core,0.5,cup
+79,flour tortilla,tortilla,core,1,large
+79,salsa,mexican_sauce,core,0.5,cup
+79,avocado,fruit,core,0.5,whole
+80,chicken breast,chicken,core,1,cup
+80,flour tortillas,tortilla,core,2,whole
+80,monterey jack,cheese,core,1,cup
+80,salsa,mexican_sauce,core,0.25,cup
+81,flour tortillas,tortilla,core,2,whole
+81,red bell pepper,vegetables,core,0.5,cup
+81,mushrooms,vegetables,core,0.5,cup
+81,spinach,leafy_greens,core,0.5,cup
+81,monterey jack,cheese,core,1,cup
+82,ground beef,beef,core,1,cup
+82,flour tortillas,tortilla,core,2,whole
+82,cheddar,cheese,core,1,cup
+82,salsa,mexican_sauce,core,0.25,cup
+83,chicken breast,chicken,core,1,cup
+83,tortilla chips,grains,core,2,cups
+83,cheddar,cheese,core,1,cup
+83,black beans,plant_protein,core,0.5,cup
+83,salsa,mexican_sauce,core,0.5,cup
+84,ground beef,beef,core,1,cup
+84,tortilla chips,grains,core,2,cups
+84,cheddar,cheese,core,1,cup
+84,black beans,plant_protein,core,0.5,cup
+84,salsa,mexican_sauce,core,0.5,cup
+85,tortilla chips,grains,core,2,cups
+85,black beans,plant_protein,core,0.5,cup
+85,corn,vegetables,core,0.5,cup
+85,red bell pepper,vegetables,core,0.5,cup
+85,cheddar,cheese,core,1,cup
+85,salsa,mexican_sauce,core,0.5,cup
+86,penne,pasta,core,8,oz
+86,chicken breast,chicken,core,1,cup
+86,marinara,tomato_sauce,core,1,cup
+86,mozzarella,cheese,core,1,cup
+86,spinach,leafy_greens,core,0.5,cup
+87,rigatoni,pasta,core,8,oz
+87,ground beef,beef,core,1,cup
+87,marinara,tomato_sauce,core,1,cup
+87,mozzarella,cheese,core,1,cup
+87,mushrooms,vegetables,core,0.5,cup
+88,ziti,pasta,core,8,oz
+88,zucchini,vegetables,core,1,cup
+88,mushrooms,vegetables,core,0.5,cup
+88,red bell pepper,vegetables,core,0.5,cup
+88,marinara,tomato_sauce,core,1,cup
+88,mozzarella,cheese,core,1,cup
+89,chicken thighs,chicken,core,1,lb
+89,carrots,vegetables,core,1,cup
+89,celery,vegetables,core,1,cup
+89,yellow onion,vegetables,core,1,whole
+89,chicken broth,broth,core,4,cups
+89,parsley,herbs,optional,0.25,cup
+90,beef chuck,beef,core,1,lb
+90,carrots,vegetables,core,1,cup
+90,potatoes,vegetables,core,1,cup
+90,celery,vegetables,core,1,cup
+90,beef broth,broth,core,4,cups
+90,thyme,herbs,optional,1,tsp
+91,carrots,vegetables,core,1,cup
+91,celery,vegetables,core,1,cup
+91,potatoes,vegetables,core,1,cup
+91,green beans,vegetables,core,1,cup
+91,vegetable broth,broth,core,4,cups
+91,parsley,herbs,optional,1,tbsp
+92,chicken breast,chicken,core,1,lb
+92,broccoli,vegetables,core,1,cup
+92,snap peas,vegetables,core,0.5,cup
+92,red bell pepper,vegetables,core,0.5,cup
+92,soy sauce,asian_sauce,core,2,tbsp
+92,jasmine rice,rice,core,1,cup
+93,beef strips,beef,core,1,lb
+93,broccoli,vegetables,core,1,cup
+93,mushrooms,vegetables,core,0.5,cup
+93,snow peas,vegetables,core,0.5,cup
+93,soy sauce,asian_sauce,core,2,tbsp
+93,jasmine rice,rice,core,1,cup
+94,broccoli,vegetables,core,1,cup
+94,carrots,vegetables,core,0.5,cup
+94,red bell pepper,vegetables,core,0.5,cup
+94,snap peas,vegetables,core,0.5,cup
+94,soy sauce,asian_sauce,core,2,tbsp
+94,brown rice,rice,core,1,cup
+95,pizza dough,grains,core,1,ball
+95,chicken breast,chicken,core,1,cup
+95,mozzarella,cheese,core,1,cup
+95,tomato sauce,tomato_sauce,core,0.5,cup
+95,mushrooms,vegetables,core,0.5,cup
+95,red onion,vegetables,core,0.25,cup
+96,pizza dough,grains,core,1,ball
+96,ground beef,beef,core,1,cup
+96,mozzarella,cheese,core,1,cup
+96,tomato sauce,tomato_sauce,core,0.5,cup
+96,green bell pepper,vegetables,core,0.5,cup
+96,mushrooms,vegetables,core,0.5,cup
+97,pizza dough,grains,core,1,ball
+97,mozzarella,cheese,core,1,cup
+97,tomato sauce,tomato_sauce,core,0.5,cup
+97,zucchini,vegetables,core,0.5,cup
+97,mushrooms,vegetables,core,0.5,cup
+97,red bell pepper,vegetables,core,0.5,cup
+98,chicken breast,chicken,core,1,cup
+98,brown rice,rice,core,1,cup
+98,broccoli,vegetables,core,1,cup
+98,carrots,vegetables,core,0.5,cup
+98,teriyaki sauce,asian_sauce,core,0.25,cup
+98,green onions,vegetables,core,0.25,cup
+99,beef strips,beef,core,1,cup
+99,jasmine rice,rice,core,1,cup
+99,broccoli,vegetables,core,1,cup
+99,mushrooms,vegetables,core,0.5,cup
+99,soy sauce,asian_sauce,core,2,tbsp
+99,green onions,vegetables,core,0.25,cup
+100,brown rice,rice,core,1,cup
+100,sweet potato,vegetables,core,1,cup
+100,broccoli,vegetables,core,1,cup
+100,edamame,plant_protein,core,0.5,cup
+100,teriyaki sauce,asian_sauce,core,0.25,cup
+100,sesame seeds,seasoning,optional,1,tbsp
