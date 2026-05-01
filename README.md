@@ -21,7 +21,7 @@ Substitute ingredients are given less points, and missing ingredients reduce poi
 
 The program then recommends the highest scoring recipe. We are still rethinking our weights though. While the recipe recommendations are valid given our weights, they aren't the most intuitive.
 
-We used ChatGPT to create the .csv files. We will use more sophisticated recipe instructions for our final submission, but for now we were focused on functionality more than the actual recipes.
+We used ChatGPT to create the .csv files and to help us format newfileflask.py. We will use more sophisticated recipe instructions for our final submission, but for now we were focused on functionality more than the actual recipes.
 
 
 
