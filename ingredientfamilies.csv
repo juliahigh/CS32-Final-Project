@@ -1,212 +1,476 @@
 ingredient,family
 
-# --- PASTA ---
-spaghetti,pasta
-fettuccine,pasta
-linguine,pasta
-penne,pasta
-rigatoni,pasta
-macaroni,pasta
-farfalle,pasta
-fusilli,pasta
-rotini,pasta
-angel hair pasta,pasta
-cavatappi,pasta
-orecchiette,pasta
-pappardelle,pasta
-lasagna noodles,pasta
-tortellini,pasta
-ravioli,pasta
-gnocchi,pasta
+# --- ASIAN_SAUCE ---,
+fish sauce,asian_sauce
+gochujang,asian_sauce
+hoisin sauce,asian_sauce
+low sodium soy sauce,asian_sauce
+miso paste,asian_sauce
+oyster sauce,asian_sauce
+soy sauce,asian_sauce
+sriracha,asian_sauce
+sweet chili sauce,asian_sauce
+tamari,asian_sauce
+teriyaki sauce,asian_sauce
 
-# --- CHEESE ---
-cheddar,cheese
-sharp cheddar,cheese
-mild cheddar,cheese
-mozzarella,cheese
-fresh mozzarella,cheese
-parmesan,cheese
-pecorino romano,cheese
+# --- BEEF ---,
+beef,beef
+beef strips,beef
+beef tips,beef
+brisket,beef
+chuck roast,beef
+filet mignon,beef
+flank steak,beef
+ground beef,beef
+ribeye,beef
+short ribs,beef
+sirloin,beef
+skirt steak,beef
+steak,beef
+
+# --- BREAD ---,
+bagel,bread
+baguette,bread
+bread,bread
+bun,bread
+buns,bread
+burger bun,bread
+burger buns,bread
+ciabatta,bread
+corn tortilla,bread
+english muffin,bread
+flour tortilla,bread
+naan,bread
+pita,bread
+sourdough,bread
+tortilla,bread
+tortillas,bread
+white bread,bread
+whole wheat bread,bread
+
+# --- BROTH ---,
+beef broth,broth
+beef stock,broth
+broth,broth
+chicken broth,broth
+chicken stock,broth
+stock,broth
+vegetable broth,broth
+vegetable stock,broth
+
+# --- BUTTER ---,
+butter,butter
+margarine,butter
+salted butter,butter
+unsalted butter,butter
+
+# --- CHEESE ---,
+american cheese,cheese
 asiago,cheese
-provolone,cheese
-swiss cheese,cheese
-gouda,cheese
-gruyere,cheese
-fontina,cheese
+blue cheese,cheese
 brie,cheese
 camembert,cheese
-ricotta,cheese
+cheddar,cheese
+cheddar cheese,cheese
+cheese,cheese
+colby jack,cheese
+cotija,cheese
 cottage cheese,cheese
 cream cheese,cheese
 feta,cheese
+fontina,cheese
+fresh mozzarella,cheese
 goat cheese,cheese
-blue cheese,cheese
-colby jack,cheese
+gouda,cheese
+gruyere,cheese
+mild cheddar,cheese
 monterey jack,cheese
+mozzarella,cheese
+parmesan,cheese
+pecorino romano,cheese
+provolone,cheese
+queso fresco,cheese
+ricotta,cheese
+sharp cheddar,cheese
+swiss cheese,cheese
 
-# --- PROTEINS ---
-# chicken
+# --- CHICKEN ---,
+chicken,chicken
 chicken breast,chicken
+chicken breasts,chicken
 chicken thighs,chicken
 chicken wings,chicken
+grilled chicken,chicken
 ground chicken,chicken
 rotisserie chicken,chicken
-whole chicken, chicken
-chicken, chicken
+shredded chicken,chicken
+whole chicken,chicken
 
-# beef
-ground beef,beef
-steak,beef
-sirloin,beef
-ribeye,beef
-brisket,beef
-beef tips,beef
-filet mignon, beef
-beef, beef
+# --- CONDIMENT ---,
+barbecue sauce,condiment
+bbq sauce,condiment
+caesar dressing,condiment
+dijon mustard,condiment
+hot sauce,condiment
+hummus,condiment
+ketchup,condiment
+mayo,condiment
+mayonnaise,condiment
+mustard,condiment
+pesto,condiment
+ranch dressing,condiment
+salad dressing,condiment
 
-# pork
-pork chops,pork
-bacon,pork
-ham,pork
-sausage,pork
-pancetta, pork
-prosciutto, pork
-guanciale, pork
-nduja, pork
-salami, pork
-pork, pork
+# --- CREAM_SAUCE ---,
+alfredo sauce,cream_sauce
+cheese sauce,cream_sauce
+cream sauce,cream_sauce
+white sauce,cream_sauce
 
-# --- FISH ---
-salmon,fish
-tuna,fish
-cod,fish
-tilapia,fish
-halibut,fish
-trout,fish
-bass,fish
-snapper,fish
-flounder,fish
-haddock,fish
-mackerel,fish
-sardines,fish
-anchovies,fish
-catfish,fish
-pollock,fish
-sole,fish
-grouper,fish
-fish, fish
+# --- DAIRY ---,
+2 percent milk,dairy
+almond milk,dairy
+buttermilk,dairy
+coconut milk,dairy
+cream,dairy
+greek yogurt,dairy
+half and half,dairy
+heavy cream,dairy
+milk,dairy
+oat milk,dairy
+skim milk,dairy
+sour cream,dairy
+whole milk,dairy
+yogurt,dairy
 
-# --- SHELLFISH / OTHER SEAFOOD ---
-shrimp,shellfish
-prawns,shellfish
-crab,shellfish
-lobster,shellfish
-scallops,shellfish
-mussels,shellfish
-clams,shellfish
-oysters,shellfish
-squid,shellfish
-calamari,shellfish
-octopus,shellfish
-
-# plant proteins
-tofu,plant_protein
-tempeh,plant_protein
-chickpeas,plant_protein
-lentils,plant_protein
-black beans,plant_protein
-kidney beans,plant_protein
-
-# eggs
+# --- EGGS ---,
+egg,eggs
 eggs,eggs
 
-# --- FRUIT ---
-banana,fruit
+# --- FISH ---,
+anchovies,fish
+bass,fish
+catfish,fish
+cod,fish
+fish,fish
+flounder,fish
+grouper,fish
+haddock,fish
+halibut,fish
+mackerel,fish
+mahi mahi,fish
+pollock,fish
+salmon,fish
+sardines,fish
+sea bass,fish
+snapper,fish
+sole,fish
+swordfish,fish
+tilapia,fish
+trout,fish
+tuna,fish
+
+# --- FRUIT ---,
 apple,fruit
-pear,fruit
-orange,fruit
+avocado,fruit
+banana,fruit
+blackberries,fruit
+blackberry,fruit
+blueberries,fruit
+blueberry,fruit
+cantaloupe,fruit
+cherries,fruit
+fruit,fruit
+grapefruit,fruit
+grapes,fruit
 lemon,fruit
 lime,fruit
-grapefruit,fruit
-strawberries,fruit
-blueberries,fruit
-raspberries,fruit
-blackberries,fruit
-pineapple,fruit
 mango,fruit
+orange,fruit
 peach,fruit
+pear,fruit
+pineapple,fruit
 plum,fruit
-cherries,fruit
-grapes,fruit
+raspberries,fruit
+raspberry,fruit
+strawberries,fruit
+strawberry,fruit
 watermelon,fruit
-cantaloupe,fruit
 
-# --- HERBS ---
+# --- GRAINS ---,
+all purpose flour,grains
+barley,grains
+breadcrumbs,grains
+bulgur,grains
+cornmeal,grains
+couscous,grains
+farro,grains
+flour,grains
+oats,grains
+panko breadcrumbs,grains
+pie crust,grains
+pizza dough,grains
+quinoa,grains
+tortilla chips,grains
+whole wheat flour,grains
+
+# --- HERBS ---,
 basil,herbs
-parsley,herbs
+bay leaf,herbs
+bay leaves,herbs
+chives,herbs
 cilantro,herbs
+dill,herbs
+fresh basil,herbs
+herbs,herbs
+marjoram,herbs
+mint,herbs
 oregano,herbs
-thyme,herbs
+parsley,herbs
 rosemary,herbs
 sage,herbs
-dill,herbs
-mint,herbs
-chives,herbs
 tarragon,herbs
-marjoram,herbs
+thyme,herbs
 
-# --- SEASONINGS / SPICES ---
-salt,seasoning
-black pepper,seasoning
-white pepper,seasoning
-red pepper flakes,seasoning
-chili powder,seasoning
-paprika,seasoning
-smoked paprika,seasoning
-cayenne pepper,seasoning
-garlic powder,seasoning
-onion powder,seasoning
-cumin,seasoning
-turmeric,seasoning
-curry powder,seasoning
-italian seasoning,seasoning
-five spice powder,seasoning
-ground ginger,seasoning
-nutmeg,seasoning
-cinnamon,seasoning
+# --- LEAFY_GREENS ---,
+arugula,leafy_greens
+baby spinach,leafy_greens
+cabbage,leafy_greens
+collard greens,leafy_greens
+green cabbage,leafy_greens
+iceberg lettuce,leafy_greens
+kale,leafy_greens
+lettuce,leafy_greens
+mixed greens,leafy_greens
+red cabbage,leafy_greens
+romaine lettuce,leafy_greens
+spinach,leafy_greens
+spring mix,leafy_greens
+swiss chard,leafy_greens
 
-# --- SAUCES (BROKEN INTO TYPES) ---
-
-# asian sauces
-soy sauce,asian_sauce
-low sodium soy sauce,asian_sauce
-tamari,asian_sauce
-teriyaki sauce,asian_sauce
-hoisin sauce,asian_sauce
-fish sauce,asian_sauce
-oyster sauce,asian_sauce
-
-# italian / tomato sauces
-tomato sauce,tomato_sauce
-marinara,tomato_sauce
-arrabbiata sauce,tomato_sauce
-vodka sauce,tomato_sauce
-pizza sauce,tomato_sauce
-
-# creamy sauces
-alfredo sauce,cream_sauce
-cream sauce,cream_sauce
-cheese sauce,cream_sauce
-
-# mexican sauces
-salsa,mexican_sauce
-pico de gallo,mexican_sauce
+# --- MEXICAN_SAUCE ---,
 enchilada sauce,mexican_sauce
+pico de gallo,mexican_sauce
+salsa,mexican_sauce
+salsa verde,mexican_sauce
 taco sauce,mexican_sauce
 
-# condiments / general sauces
-ketchup,condiment
-mustard,condiment
-mayonnaise,condiment
-bbq sauce,condiment
-hot sauce,condiment
+# --- NUTS_SEEDS ---,
+almonds,nuts_seeds
+cashews,nuts_seeds
+chia seeds,nuts_seeds
+peanuts,nuts_seeds
+pecans,nuts_seeds
+pine nuts,nuts_seeds
+sesame seeds,nuts_seeds
+sunflower seeds,nuts_seeds
+walnuts,nuts_seeds
+
+# --- OIL ---,
+avocado oil,oil
+canola oil,oil
+coconut oil,oil
+extra virgin olive oil,oil
+oil,oil
+olive oil,oil
+peanut oil,oil
+sesame oil,oil
+vegetable oil,oil
+
+# --- OTHER ---,
+ice,other
+water,other
+
+# --- PASTA ---,
+angel hair pasta,pasta
+cavatappi,pasta
+egg noodles,pasta
+elbow macaroni,pasta
+farfalle,pasta
+fettuccine,pasta
+fusilli,pasta
+gnocchi,pasta
+lasagna noodles,pasta
+linguine,pasta
+macaroni,pasta
+noodles,pasta
+orecchiette,pasta
+pappardelle,pasta
+pasta,pasta
+penne,pasta
+ramen noodles,pasta
+ravioli,pasta
+rice noodles,pasta
+rigatoni,pasta
+rotini,pasta
+soba noodles,pasta
+spaghetti,pasta
+tortellini,pasta
+udon noodles,pasta
+
+# --- PLANT_PROTEIN ---,
+beans,plant_protein
+black beans,plant_protein
+cannellini beans,plant_protein
+chickpeas,plant_protein
+edamame,plant_protein
+garbanzo beans,plant_protein
+kidney beans,plant_protein
+lentils,plant_protein
+pinto beans,plant_protein
+seitan,plant_protein
+tempeh,plant_protein
+tofu,plant_protein
+white beans,plant_protein
+
+# --- PORK ---,
+bacon,pork
+ground pork,pork
+guanciale,pork
+ham,pork
+italian sausage,pork
+nduja,pork
+pancetta,pork
+pepperoni,pork
+pork,pork
+pork chops,pork
+pork tenderloin,pork
+prosciutto,pork
+salami,pork
+sausage,pork
+
+# --- RICE ---,
+arborio rice,rice
+basmati rice,rice
+brown rice,rice
+jasmine rice,rice
+long grain rice,rice
+rice,rice
+short grain rice,rice
+sushi rice,rice
+white rice,rice
+wild rice,rice
+
+# --- SEASONING ---,
+black pepper,seasoning
+cayenne pepper,seasoning
+chili powder,seasoning
+cinnamon,seasoning
+crushed red pepper,seasoning
+cumin,seasoning
+curry powder,seasoning
+dried basil,seasoning
+dried oregano,seasoning
+dried thyme,seasoning
+everything bagel seasoning,seasoning
+five spice powder,seasoning
+garlic powder,seasoning
+ginger,seasoning
+ground ginger,seasoning
+italian seasoning,seasoning
+kosher salt,seasoning
+nutmeg,seasoning
+onion powder,seasoning
+paprika,seasoning
+red pepper flakes,seasoning
+salt,seasoning
+sea salt,seasoning
+seasoning,seasoning
+smoked paprika,seasoning
+taco seasoning,seasoning
+turmeric,seasoning
+white pepper,seasoning
+
+# --- SHELLFISH ---,
+calamari,shellfish
+clams,shellfish
+crab,shellfish
+lobster,shellfish
+mussels,shellfish
+octopus,shellfish
+oysters,shellfish
+prawns,shellfish
+scallops,shellfish
+seafood,shellfish
+shellfish,shellfish
+shrimp,shellfish
+squid,shellfish
+
+# --- SWEETENER ---,
+agave,sweetener
+brown sugar,sweetener
+honey,sweetener
+maple syrup,sweetener
+powdered sugar,sweetener
+sugar,sweetener
+
+# --- TOMATO_SAUCE ---,
+arrabbiata sauce,tomato_sauce
+bolognese sauce,tomato_sauce
+marinara,tomato_sauce
+marinara sauce,tomato_sauce
+pasta sauce,tomato_sauce
+pizza sauce,tomato_sauce
+tomato sauce,tomato_sauce
+vodka sauce,tomato_sauce
+
+# --- TOMATOES ---,
+canned tomatoes,tomatoes
+cherry tomatoes,tomatoes
+crushed tomatoes,tomatoes
+diced tomatoes,tomatoes
+grape tomatoes,tomatoes
+heirloom tomatoes,tomatoes
+roma tomatoes,tomatoes
+san marzano tomatoes,tomatoes
+tomato,tomatoes
+tomato paste,tomatoes
+tomatoes,tomatoes
+
+# --- TURKEY ---,
+deli turkey,turkey
+ground turkey,turkey
+turkey,turkey
+turkey breast,turkey
+turkey slices,turkey
+
+# --- VEGETABLES ---,
+asparagus,vegetables
+bell pepper,vegetables
+bell peppers,vegetables
+black olives,vegetables
+broccoli,vegetables
+butternut squash,vegetables
+carrot,vegetables
+carrots,vegetables
+cauliflower,vegetables
+celery,vegetables
+corn,vegetables
+cucumber,vegetables
+eggplant,vegetables
+garlic,vegetables
+green beans,vegetables
+green bell pepper,vegetables
+green olives,vegetables
+green onions,vegetables
+jalapeno,vegetables
+jalapeño,vegetables
+mushroom,vegetables
+mushrooms,vegetables
+olives,vegetables
+onion,vegetables
+peas,vegetables
+potato,vegetables
+potatoes,vegetables
+red bell pepper,vegetables
+red onion,vegetables
+scallions,vegetables
+shallot,vegetables
+shallots,vegetables
+squash,vegetables
+sweet potato,vegetables
+vegetables,vegetables
+white onion,vegetables
+yellow bell pepper,vegetables
+yellow onion,vegetables
+zucchini,vegetables
