@@ -2,9 +2,6 @@
 <html>
 <body>
     {% if result %}
-    #this is the program output page
-    #and here you can see it refers to result.name, cuisine, substitutions, etc,
-    # all of which we got from newfileflask.py
         <h1>{{ result.name }}</h1>
         <p>Cuisine: {{ result.cuisine }}</p>
         <p>Match score: {{ result.score }}%</p>
