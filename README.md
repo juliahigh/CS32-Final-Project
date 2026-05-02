@@ -1,37 +1,28 @@
-# CS32-Final-Project
+# Final Project CS32 Cookbook!
 
-This is Julia High and Raul Ontiveros' CS32 final project repository.
+Authors: Julia High and Raul Ontiveros
 
-FP Status Updates:
+## Project Overview: 
+We have created a recipe recommendation tool that suggests a recipe to a user based on their available ingredients and cuisine preferences. Our program contains a collection of 100 recipes across several different cuisines.
 
-We've reworked our program so that it includes 10 recipes. We will continue expanding the number of recipes for the final submission.
+We started the project in fpdesign.py, a file we ran in the Python terminal. After receiving a suggestion from our mentor, we switched our program to run on a local web server using Flask.
 
-We've included several new files:
-allrecipes.csv - this has the recipe name/id, cuisine, and instructions
-allingredients.csv - this has the ingredients and the associated info (i.e. family)
-ingredientfamilies.csv - this allows for substitutes, still working on this
+Happy cooking!
 
-Right now, our program still recommends the user a recipe based on the ingredients that they have inputted. Instead of ranking the recipes, we decided to suggest the single best recipe. We may rank them later on.
+## How to Run the Program:
+1. Run newfileflask.py in the Python terminal
+2. Select "Open in Browser" from the popup
+3. Type in your ingredients
+4. Type in your cuisine
+5. Select find recipe
+6. Then you should see a recipe with a match score, possible substitutions, and instructions. Bon appetit!
 
-The best recipe is decided based on several factors. For one, we have added a new file called ingredientfamilies.csv so that the user can account for substitutions. i.e. there are several tomato varieties. This part still needs some work for the final version, of course, because right now ingredients like soy sauce and salsa would be considered the same family.
+## Key Files:
+* newfileflask.py - Runs our program on the local html site.
+* allingredients.csv - Contains all ingredients across 100 recipes. 
+* allrecipes.csv - Contains all recipes, cuisines, and instructions.
+* ingredientfamilies.csv - Contains substitution options for several different ingredients.
+* fpdesign.py - Our original program that works in the Python terminal.
 
-The ingredients are also ranked based on importance. For example, there are the core ingredients and then there are the pantry ingredients. The pantry ingredients are ones we assume that any home chef has, so they aren't as critical as the fundamental ingredients that someone might have to go to the store for.
-
-Substitute ingredients are given less points, and missing ingredients reduce points.
-
-The program then recommends the highest scoring recipe. We are still rethinking our weights though. While the recipe recommendations are valid given our weights, they aren't the most intuitive.
-
-We used ChatGPT to create the .csv files and to help us format newfileflask.py. We will use more sophisticated recipe instructions for our final submission, but for now we were focused on functionality more than the actual recipes.
-
-
-
-
----
-
-For our final project, we want to write a cookbook (or accomplish one element of writing a cookbook).
-
-We want to suggest recipes for a user to make based on ingredients that they have. We may have a pre-set list of recipes (fish, salads, pastas, baked goods, etc) that our program will pull from.
-
-There may be the option for the user to input if they have any specialty equipment (i.e. food processor, electric mixer, precision cooker, etc) that would also help narrow down which recipes they should tackle.
-
-Ultimately, the program will match the user with the best recipe based on something like the percentage of ingredients they have to complete it, or something along those lines.
+## External Contributors:
+Since we wanted to have a large collection of recipes, we used ChatGPT to help create the .csv files. We also used it to help us with the Flask formatting and implementation.
