@@ -16,7 +16,7 @@ def find_recipe(user_input, user_cuisine):
     #gets rid of any spaces or uppercase
     user_cuisine = user_cuisine.strip().lower()
 
-    # SECTION1 1: Creates a dictionary with the ingredient families
+    # SECTION 1: Creates a dictionary with the ingredient families
     # Load ingredient families
     ingredient_families = {}
 
@@ -114,6 +114,9 @@ def find_recipe(user_input, user_cuisine):
             #if the ingredient family is generally in the same category,
             elif family in user_families:
                 #then the recipe gets 0.6
+                #this way, we still account for the core
+                #versus optional distinction while also
+                #giving different values for substitutions
                 earned_score += weight * 0.6
 
                 #for each of the user's ingredients
